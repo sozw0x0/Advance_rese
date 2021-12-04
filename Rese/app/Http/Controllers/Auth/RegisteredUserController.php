@@ -1,22 +1,37 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 
-class RegisterController extends Controller
+class RegisteredUserController extends Controller
 {
-    public function register()
+    /**
+     * Display the registration view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function create()
     {
         return view('rese.register');
     }
 
-    public function create(Request $request)
+    /**
+     * Handle an incoming registration request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function store(Request $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:191'],
@@ -32,11 +47,6 @@ class RegisterController extends Controller
 
         $user->save();
 
-        return redirect()->route('thanx');
-    }
-
-    public function thanx()
-    {
-        return view('rese.thanx');
+        return redirect('/thanx');
     }
 }

@@ -9,21 +9,14 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>新規会員登録</title>
+  <title>ログイン</title>
 </head>
 
 <body>
   <div class="card">
-    <h1>新規登録</h1>
-    <form action=" {{ route('register') }}" method="POST">
+    <h1>ログイン</h1>
+    <form action=" {{ route('login') }}" method="POST">
       @csrf
-      <div>
-        <label for="name"><span></span></label>
-        <input type="text" name="name" value="{{ old('name') }}">
-        @if ($errors->has('name'))
-        <p class="error-message">{{ $errors->first('name') }}</p>
-        @endif
-      </div>
       <div>
         <label for="email"><span></span></label>
         <input type="email" name="email" value="{{ old('email') }}">
@@ -33,13 +26,13 @@
       </div>
       <div>
         <label for="password"><span></span></label>
-        <input type="password" name="password">
-        @if ($errors->has('password'))
-        <p class="error-message">{{ $errors->first('password') }}</p>
+        <input type="password" name="password" value="{{ old('password') }}">
+        @if ($errors->has('pass'))
+        <p class="error-message">{{ $errors->first('pass') }}</p>
         @endif
       </div>
       <div>
-        <input type="submit" value="登録" class="button">
+        <input type="submit" value="ログイン" class="button">
       </div>
     </form>
   </div>
