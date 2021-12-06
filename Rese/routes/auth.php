@@ -9,8 +9,10 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\ImageController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -18,8 +20,6 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest');
-
-Route::get('/thanx', [RegisterController::class, 'thanx'])->name('rese.thanx');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
@@ -66,5 +66,9 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+Route::get('/', [ShopController::class, 'index'])->name('shop.index');
+
+Route::get('/thanx', [RegisterController::class, 'thanx'])->name('rese.thanx');
 
 Route::get('/mypage', [MypageController::class, 'show'])->middleware('auth')->name('maypage.index');

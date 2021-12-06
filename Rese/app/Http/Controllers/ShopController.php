@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Shop;
 
 class ShopController extends Controller
 {
     public function index()
     {
-
-        return view('rese.index');
+        $shops = Shop::all();
+        return view('rese.index', ['shops' => $shops]);
     }
 
     public function detail()

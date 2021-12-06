@@ -11,11 +11,6 @@ Route::get('/detail/{shop_id}', [ShopController::class, 'detail'])->name('shop.d
 //商品ページ詳細
 
 Route::get('/mypage', [MypageController::class, 'show'])->name('maypage.index');
-
-Route::get('/', function () {
-    return view('rese.index');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

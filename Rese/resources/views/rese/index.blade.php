@@ -9,11 +9,11 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>新規会員登録</title>
+  <title>トップページ</title>
 </head>
 
 <body>
-  <div >
+  <div>
     @if (Route::has('login'))
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
       @auth
@@ -27,7 +27,34 @@
       @endauth
     </div>
     @endif
-    <div>店舗ページ</div>
+    <div>
+      <nav>検索フォーム</nav>
+    </div>
+    <div>店舗ページ
+      <div>店舗一覧
+        @foreach ($shops as $items)
+        <div>単体
+          <div>
+            <p>
+              <img src="storage/images/shop_{{$items->shop_id}}.jpg">
+            </p>
+            <h2>店の名前{{$items->shop_name}}</h2>
+            <p><span>タグ{{$items->shop_area}}</span><span>タグ{{$items->shop_genre}}</span></p>
+            <form action="">
+              @csrf
+              <input type="button" value="詳しく見る">
+            </form>
+            <div>
+              <form action="">
+                @csrf
+                <input type="button" value="お気に入り">
+              </form>
+            </div>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
