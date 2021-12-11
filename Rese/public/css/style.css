@@ -1,3 +1,67 @@
-.content {
-  background: linear-gradient(47deg, #c483ff, #ffe6fb);
+.full_page {
+  background: linear-gradient(90deg, #FACEFF, #BBBBE9);
+}
+
+header {
+  width: 100%;
+  padding: 30px 10px;
+  background-color: #A1FBEE;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.header_wrap {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav {
+  margin: 0 0 0 auto;
+}
+
+.nav_wrap {
+  display: flex;
+}
+
+.nav_item {
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+
+.content_card {
+  background-color: #fff;
+  width: 50vw;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.card_img {
+  width: 100%;
+}
+
+.card_group {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card_item {
+  margin: 35px;
+  width: 20%;
+  border-radius: 30px;
+}
+
+.card_content {
+  background-color:#FDFDFD ;
 }

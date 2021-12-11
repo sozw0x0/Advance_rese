@@ -69,6 +69,8 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 
+Route::get('/detail/{shop_id}', [ShopController::class, 'detail'])->name('shop.detail');
+
 Route::get('/thanx', [RegisterController::class, 'thanx'])->name('rese.thanx');
 
 Route::get('/mypage', [MypageController::class, 'show'])->middleware('auth')->name('maypage.index');

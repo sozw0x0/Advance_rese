@@ -1,10 +1,10 @@
 @extends('/rese/layouts/main')
 
 @section('title', 'ログイン')
-@section('content')
+@section('main')
 
-<body>
-  <div class="card">
+<div>
+  <div class="content_card">
     <h1>ログイン</h1>
     <form action=" {{ route('login') }}" method="POST">
       @csrf
@@ -27,4 +27,5 @@
       </div>
     </form>
   </div>
-  @endsection
+</div>
+@endsection

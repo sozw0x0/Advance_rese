@@ -14,24 +14,32 @@
   <title>@yield('title')</title>
 </head>
 
-<body>
-  <header>
-    <div>
-      <a href="">Rese</a>
-      <nav>
-        <ul>
-          <li>TOP</li>
-          <li>login or logout</li>
-          <li>regster or mypage</li>
-        </ul>
-      </nav>
-    </div>
+<body class="full_page">
+  <header class="wrap header_wrap">
+    <h1><a href="/" class="logo">Rese</a></h1>
+    <nav class="nav">
+      <ul class="nav_wrap">
+        <li class="nav_item">TOP</li>
+        @if (Route::has('login'))
+        <li class="nav_item">@auth
+          <a href="{{ url('/dashboard') }}">Dashboard</a>
+          @else
+          <a href="{{ route('login') }}">Log in</a>
+          or logout
+        </li>
+        <li class="nav_item">@if (Route::has('register'))
+          <a href="{{ route('register') }}">Register</a>
+          or mypage
+        </li>
+        @endif
+        @endauth
+      </ul>
+      @endif
+    </nav>
   </header>
-  <div class="content">
-    <!-- コンテンツ -->
-    <div class="main">
-      @yield('content')
-    </div>
+  
+  <div class="main_content">
+    @yield('main')
   </div>
   <!-- Optional JavaScript; choose one of the two! -->
 

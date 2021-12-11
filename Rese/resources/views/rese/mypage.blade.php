@@ -1,7 +1,7 @@
 @extends('/rese/layouts/main')
 
 @section('title', 'マイページ')
-@section('content')
+@section('main')
 <div>マイページ
   <div>
     予約状況

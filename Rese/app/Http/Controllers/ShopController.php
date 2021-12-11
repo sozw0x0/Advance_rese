@@ -16,8 +16,10 @@ class ShopController extends Controller
         return view('rese.index', ['shops' => $shops]);
     }
 
-    public function detail()
+    public function detail($shop_id)
     {
-        return view('rese.index');
+        $shop_detail = shop::find($shop_id);
+        
+        return view('rese.detail', compact('shop_detail'));
     }
 }
