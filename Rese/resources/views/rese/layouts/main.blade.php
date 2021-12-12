@@ -20,24 +20,24 @@
     <nav class="nav">
       <ul class="nav_wrap">
         <li class="nav_item">TOP</li>
-        @if (Route::has('login'))
         <li class="nav_item">@auth
-          <a href="{{ url('/dashboard') }}">Dashboard</a>
-          @else
-          <a href="{{ route('login') }}">Log in</a>
-          or logout
+          <a href="{{ url('/mypage') }}">mypage</a>
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <a href="route('logout')" onclick="event.preventDefault();
+            this.closest('form').submit();">Log out</a>
+          </form>
         </li>
-        <li class="nav_item">@if (Route::has('register'))
-          <a href="{{ route('register') }}">Register</a>
-          or mypage
-        </li>
-        @endif
         @endauth
+        <li class="nav_item">@guest
+          <a href="{{ route('register') }}">Register</a>
+          <a href="{{ route('login') }}">Log in</a>
+        </li>
+        @endguest
       </ul>
-      @endif
     </nav>
   </header>
-  
+
   <div class="main_content">
     @yield('main')
   </div>

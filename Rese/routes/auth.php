@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MypageController;
-use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ReserveController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -74,3 +74,11 @@ Route::get('/detail/{shop_id}', [ShopController::class, 'detail'])->name('shop.d
 Route::get('/thanx', [RegisterController::class, 'thanx'])->name('rese.thanx');
 
 Route::get('/mypage', [MypageController::class, 'show'])->middleware('auth')->name('maypage.index');
+
+Route::group(['prefix' => '/reserve', 'middleware' => 'auth'],function () {
+  Route::post('/create', [Reservecontroller::class, 'create']);
+  Route::post('/update/{id?}', [Reservecontroller::class, 'update']);
+  Route::post('/delete/{id?}', [Reservecontroller::class, 'delete']);
+});
+
+Route::get('/done', [ReserveController::class, 'done'])->middleware('auth')->name('done');
