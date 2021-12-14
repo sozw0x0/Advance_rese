@@ -12,4 +12,14 @@ class Reserve extends Model
     protected $primaryKey = 'reserve_id';
 
     protected $fillable = ['reserve_date', 'reserve_time', 'reserve_num', 'created_at', 'update_at'];
+
+    public function user()
+    {
+        return  $this->belongsTo('App\Models\User');
+    }
+
+    public function getData()
+    {
+        return $this->reserve;
+    }
 }

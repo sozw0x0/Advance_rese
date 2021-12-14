@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Reserve;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Auth;
 
 class MypageController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
-        return view('rese/mypage');
+        $id = Auth::id();
+        $reserved = User::find($id);
+        return view('rese/mypage', compact('reserved'));
     }
 }

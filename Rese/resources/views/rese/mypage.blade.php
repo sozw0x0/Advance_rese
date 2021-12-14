@@ -10,6 +10,46 @@
     {{ Auth::user()->name }}
   </div>
   <div>
+    <div>
+      <div>
+        <p>予約状況</p>
+        <div>
+          <span></span>予約
+        </div>
+        <div>
+          <form action="" method="post">
+            @csrf
+            <input type="button" value="×">
+          </form>
+        </div>
+      </div>
+      <div>
+        <table>
+          <tr>
+            <th>shop</th>
+            <td>{{$reserved->shop_name}}</td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>{{$reserved->reserve_date}}</td>
+          </tr>
+          <tr>
+            <th>Time</th>
+            <td>{{$reserved->reserve_time}}</span></td>
+          </tr>
+          <tr>
+            <th>Number</th>
+            <td>{{$reserved->reserve_num}}</span></td>
+          </tr>
+        </table>
+        <div>
+          予約変更
+        </div>
+      </div>
+      <div>
+        お気に入り
+      </div>
+    </div>
   </div>
 </div>
 @endsection
