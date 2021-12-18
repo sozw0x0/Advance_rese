@@ -11,7 +11,7 @@ class ReserveController extends Controller
     public function create(Request $request)
     {
         $reserve =[
-            'id' => $request->id,
+            'user_id' => $request->user_id,
             'shop_id' => $request->shop_id,
             'reserve_date' => $request->reserve_date,
             'reserve_time' => $request->reserve_time,
@@ -27,9 +27,10 @@ class ReserveController extends Controller
         //
     }
 
-    public function destroy(Reserve $reserve)
+    public function delete(Request $request)
     {
-        //
+        Reserve::find($request->id)->delete();
+        return redirect('rese/mypage');
     }
 
     public function done()

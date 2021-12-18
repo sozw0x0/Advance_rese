@@ -8,17 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Shop extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'shop_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = ['shop_name', 'shop_area', 'shop_genre', 'shop_summary', 'created_at', 'update_at'];
 
-    public function user()
+    public function reserve()
     {
-        return  $this->belongsTo('App\Models\User');
+        return  $this->hasMany('App\Models\Reserve');
     }
 
-    public function getData()
-    {
-        return $this->shop;
-    }
 }

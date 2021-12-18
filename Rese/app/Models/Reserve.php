@@ -9,17 +9,12 @@ class Reserve extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'reserve_id';
+    protected $primaryKey = 'id';
 
-    protected $fillable = ['reserve_date', 'reserve_time', 'reserve_num', 'created_at', 'update_at'];
+    protected $fillable = ['reserve_date', 'reserve_time', 'reserve_num', 'created_at', 'updated_at'];
 
     public function user()
     {
         return  $this->belongsTo('App\Models\User');
-    }
-
-    public function getData()
-    {
-        return $this->reserve;
     }
 }

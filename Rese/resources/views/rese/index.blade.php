@@ -12,7 +12,7 @@
       @foreach ($shops as $items)
       <div class="card_item">
         <p>
-          <img src="storage/images/shop_{{$items->shop_id}}.jpg" class=" card_img">
+          <img src="storage/images/shop_{{$items->id}}.jpg" class=" card_img">
         </p>
         <div class="card_content">
           <h2 class="card-ttl">店の名前{{$items->shop_name}}</h2>
@@ -20,7 +20,7 @@
             <p><span>タグ{{$items->shop_area}}</span><span>タグ{{$items->shop_genre}}</span></p>
           </div>
           <div>
-            <a href="/detail/{{$items->shop_id}}"><button type="button">詳しく見る</button></a>
+            <a href="/detail/{{$items->id}}"><button type="button">詳しく見る</button></a>
           </div>
           <div>
             <form action="" method="">

@@ -14,7 +14,7 @@ class CreateShopsTable extends Migration
     public function up()
     {
         Schema::create('shops', function (Blueprint $table) {
-                $table->bigIncrements('shop_id');
+                $table->bigIncrements('id');
                 $table->string('shop_name', 191);
                 $table->string('shop_area', 191);
                 $table->string('shop_genre', 191);

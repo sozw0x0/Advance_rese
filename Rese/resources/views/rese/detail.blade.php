@@ -8,7 +8,7 @@
   <div class="detail">
     <h2 class="">店の名前{{$shop_detail->shop_name}}</h2>
     <p>
-      <img src="/storage/images/shop_{{$shop_detail->shop_id}}.jpg" class=" card_img">
+      <img src="/storage/images/shop_{{$shop_detail->id}}.jpg" class=" card_img">
     </p>
     <div class="">
       <div>
@@ -27,9 +27,9 @@
           <input id="reserve_date" type="date" name="reserve_date" value="" onforminput="onforminput();">
           <input type="time" name="reserve_time" value="">
           <input type="number" name="reserve_num" value="" min="1">
-          <input type="hidden" name="shop_id" value="{{$shop_detail->shop_id}}">
+          <input type="hidden" name="shop_id" value="{{$shop_detail->id}}">
           @if( Auth::check() )
-          <input type="hidden" name="id" value="{{ Auth::id() }}">
+          <input type="hidden" name="user_id" value="{{ Auth::id() }}">
           @endif
       </div>
       <div>
