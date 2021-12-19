@@ -10,4 +10,9 @@ class Reserve extends Model
     use HasFactory;
 
     protected $fillable = ['id', 'reserve_date', 'reserve_time', 'reserve_num', 'created_at', 'updated_at'];
+
+    public function shop()
+    {
+        return $this->belongsTo('App\Models\Shop');
+    }
 }

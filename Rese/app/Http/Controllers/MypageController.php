@@ -17,7 +17,7 @@ class MypageController extends Controller
     public function show(Request $request)
     {
         $id = Auth::id();
-        $item =Reserve::where('user_id', $id)->get();
-        return view('rese/mypage', compact('reserved'));
+        $items =Reserve::where('user_id', $id)->get();
+        return view('rese.mypage', ['items' => $items]);
     }
 }

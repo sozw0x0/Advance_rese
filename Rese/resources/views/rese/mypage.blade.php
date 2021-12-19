@@ -16,6 +16,7 @@
         <div>
           <span></span>予約
         </div>
+        @foreach ($items as $item)
         <div>
           <form action="" method="post">
             @csrf
@@ -27,20 +28,21 @@
         <table>
           <tr>
             <th>shop</th>
-            <td></td>
+            <td>{{$item->shop->shop_name}}</td>
           </tr>
           <tr>
             <th>Date</th>
-            <td>{{$reserved->name}}</td>
+            <td>{{$item->reserve_date}}</td>
           </tr>
           <tr>
             <th>Time</th>
-            <td></span></td>
+            <td>{{$item->reserve_time}}</td>
           </tr>
           <tr>
             <th>Number</th>
-            <td></span></td>
+            <td>{{$item->reserve_num}}</td>
           </tr>
+          @endforeach
         </table>
         <div>
           予約変更

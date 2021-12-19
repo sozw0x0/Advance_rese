@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended('rese/mypage');
+        return redirect()->intended('rese.mypage');
     }
 
     /**
