@@ -22,15 +22,10 @@ class ReserveController extends Controller
         return redirect('/done');
     }
 
-    public function update(Request $request)
-    {
-        //
-    }
-
     public function delete(Request $request)
     {
         Reserve::find($request->id)->delete();
-        return redirect('rese/mypage');
+        return redirect('mypage');
     }
 
     public function done()

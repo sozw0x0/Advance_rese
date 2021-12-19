@@ -25,7 +25,7 @@
         <form action="/reserve/create" method="POST">
           @csrf
           <input id="reserve_date" type="date" name="reserve_date" value="" onforminput="onforminput();">
-          <input type="time" name="reserve_time" value="">
+          <input type="time" name="reserve_time" value="" step="900">
           <input type="number" name="reserve_num" value="" min="1">
           <input type="hidden" name="shop_id" value="{{$shop_detail->id}}">
           @if( Auth::check() )

@@ -18,9 +18,9 @@
         </div>
         @foreach ($items as $item)
         <div>
-          <form action="" method="post">
+          <form action="/reserve/delete/{{$item->id}}" method="post">
             @csrf
-            <input type="button" type="submit" value="×">
+            <input type="submit" value="×">
           </form>
         </div>
       </div>
