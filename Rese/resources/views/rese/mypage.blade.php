@@ -17,7 +17,7 @@
           <span></span>予約
         </div>
         <div>
-          <form action="/reserve/delete/{{$reserved->id}}" method="post">
+          <form action="" method="post">
             @csrf
             <input type="button" type="submit" value="×">
           </form>
@@ -35,11 +35,11 @@
           </tr>
           <tr>
             <th>Time</th>
-            <td>{{$reserved->reserve_time}}</span></td>
+            <td></span></td>
           </tr>
           <tr>
             <th>Number</th>
-            <td>{{$reserved->reserve_num}}</span></td>
+            <td></span></td>
           </tr>
         </table>
         <div>

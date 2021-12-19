@@ -12,8 +12,6 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
-    protected $guarded = array('id');
     /**
      * The attributes that are mass assignable.
      *
@@ -45,6 +43,6 @@ class User extends Authenticatable
 
     public function reserves()
     {
-        return $this->hasMany('App\Models\reserve');
+        return $this->hasMany('App\Models\Reserve');
     }
 }
