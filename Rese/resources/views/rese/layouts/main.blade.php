@@ -19,9 +19,13 @@
     <h1><a href="/" class="logo">Rese</a></h1>
     <nav class="nav">
       <ul class="nav_wrap">
-        <li class="nav_item">TOP</li>
+        <li class="nav_item">
+          <a href="{{ url('/') }}">TOP</a>
+        </li>
         <li class="nav_item">@auth
           <a href="{{ url('/mypage') }}">mypage</a>
+        </li>
+        <li>
           <form action="{{ route('logout') }}" method="POST">
             @csrf
             <a href="route('logout')" onclick="event.preventDefault();

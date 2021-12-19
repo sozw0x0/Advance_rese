@@ -5,7 +5,28 @@
 
 <div>
   <div>
-    <nav>検索フォーム</nav>
+    <form action="/" method="get">
+      <p>
+        <select name="shop_area" size="1">
+          <option value="">All area</option>
+          <option value="東京都">東京都</option>
+          <option value="大阪府">大阪府</option>
+          <option value="福岡県">福岡県</option>
+        </select>
+      </p>
+      <p>
+        <select name="shop_genre" size="1">
+          <option value="">All area</option>
+          <option value="寿司">寿司</option>
+          <option value="焼肉">焼肉</option>
+          <option value="居酒屋">居酒屋</option>
+          <option value="イタリアン">イタリアン</option>
+          <option value="ラーメン">ラーメン</option>
+        </select>
+      </p>
+      <input type="text" name="shop_name" id="" placeholder="Search...">
+      <input type="submit" value="">
+    </form>
   </div>
   <div>店舗ページ
     <div class="card_group">
