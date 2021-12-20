@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Favorite;
 use App\Models\Reserve;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -11,7 +12,7 @@ use App\Models\Shop;
 
 class ShopController extends Controller
 {
-    public function index(Request $request)
+    public function index(Shop $shop, Request $request)
     {
         $shop_area = $request->input('shop_area');
         $shop_genre = $request->input('shop_genre');
@@ -38,6 +39,7 @@ class ShopController extends Controller
         }
 
         $shops = $query->get();
+
         return view('rese.index', ['shops' => $shops]);
     }
 

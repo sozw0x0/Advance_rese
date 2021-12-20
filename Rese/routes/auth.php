@@ -13,6 +13,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\FavoriteController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -82,3 +83,6 @@ Route::group(['prefix' => '/reserve', 'middleware' => 'auth'],function () {
 });
 
 Route::get('/done', [ReserveController::class, 'done'])->middleware('auth')->name('done');
+
+Route::get('/favorite/{id?}', [FavoriteController::class, 'favorite'])->name('favorite');
+Route::get('/notfavorite/{id?}', [FavoriteController::class, 'notfavorite'])->name('notfavorite');

@@ -44,10 +44,20 @@
             <a href="/detail/{{$items->id}}"><button type="button">詳しく見る</button></a>
           </div>
           <div>
-            <form action="" method="">
-              @csrf
-              <input type="button" value="お気に入り">
-            </form>
+            <span>
+              <img src="">
+              <!-- ifユーザーが「いいね」をしていたら -->
+              <!-- 「いいね」取消用ボタンを表示 -->
+              <form action="" method="get">
+                取り消し
+              </form>
+              </a>
+              <!-- elseまだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
+              <form action="" method="get">
+                いいね
+              </form>
+              <!-- endif -->
+            </span>
           </div>
         </div>
       </div>
