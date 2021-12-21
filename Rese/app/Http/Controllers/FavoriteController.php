@@ -9,19 +9,20 @@ use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
-    public function favorite(Request $request)
+    public function favorite(Request $request, $id)
     {
         $favorite = new Favorite();
-        $favorite->shop_id = $request->shop_id;
-        $favorite->user_id = Auth::user()->id;
+        $favorite->shop_id = $id;
+        $favorite->user_id = Auth::id();
         $favorite->save();
 
-        return redirect()->route('rese.index', [$request->shop_id]);
+        return back();
     }
 
     public function notfavorite(Request $request, $id)
     {
-        Favorite::find($request->id)->delete();
-        return redirect()->route('rese.index');
+        $favorite = Favorite::where('shop_id', $id)->where('user_id', Auth::id())->first();
+        $favorite->delete();
+        return back();
     }
 }

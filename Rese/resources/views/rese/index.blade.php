@@ -46,17 +46,15 @@
           <div>
             <span>
               <img src="">
-              <!-- ifユーザーが「いいね」をしていたら -->
-              <!-- 「いいね」取消用ボタンを表示 -->
-              <form action="" method="get">
-                取り消し
-              </form>
+              @if($favorite)
+              <a href="/notfavorite/{{$items->id}}" class="">
+                いいね取り消し
               </a>
-              <!-- elseまだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
-              <form action="" method="get">
+              @else
+              <a href="/favorite/{{$items->id}}" class="">
                 いいね
-              </form>
-              <!-- endif -->
+              </a>
+              @endif
             </span>
           </div>
         </div>

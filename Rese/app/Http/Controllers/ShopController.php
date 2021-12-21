@@ -12,7 +12,7 @@ use App\Models\Shop;
 
 class ShopController extends Controller
 {
-    public function index(Shop $shop, Request $request)
+    public function index(Request $request)
     {
         $shop_area = $request->input('shop_area');
         $shop_genre = $request->input('shop_genre');
@@ -40,7 +40,11 @@ class ShopController extends Controller
 
         $shops = $query->get();
 
-        return view('rese.index', ['shops' => $shops]);
+        $id = Auth::id();
+
+        $favorite = Favorite::where('shop_id', $request->shop_id)->first();
+
+        return view('rese.index', compact('shops', 'favorite'));
     }
 
 
