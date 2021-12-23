@@ -40,11 +40,14 @@ class ShopController extends Controller
 
         $shops = $query->get();
 
-        $id = Auth::id();
+        $shopIds = array();
+        foreach ($shops as $shop){
+            array_push($shopIds, $shop->id);
+        }
 
-        $favorite = Favorite::where('shop_id', $request->shop_id)->first();
+        $favorites = Favorite::whereIn('shop_id', $shopIds)->where('user_id', Auth::id())->get();
 
-        return view('rese.index', compact('shops', 'favorite'));
+        return view('rese.index', compact('shops', 'favorites'));
     }
 
 

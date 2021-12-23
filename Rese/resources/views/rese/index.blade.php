@@ -46,7 +46,16 @@
           <div>
             <span>
               <img src="">
-              @if($favorite)
+              <?php
+              $favoriteFlag = false;
+              foreach ($favorites as $favorite) {
+                if ($items->id === $favorite->shop_id) {
+                    $favoriteFlag = true;
+                    break;
+                }
+              }
+              ?>
+              @if($favoriteFlag)
               <a href="/notfavorite/{{$items->id}}" class="">
                 いいね取り消し
               </a>
