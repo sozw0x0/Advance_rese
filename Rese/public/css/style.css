@@ -14,7 +14,14 @@ header {
 
 .logo {
   font-weight: bold;
-  font-size: 20px;
+  line-height:48px;
+  font-size: 48px;
+  color: #5454f7;
+  text-decoration: none;
+}
+
+.site_logo {
+  width: 48px;
 }
 
 .header_wrap {

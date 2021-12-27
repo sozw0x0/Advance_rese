@@ -43,15 +43,15 @@
           <div>
             <a href="/detail/{{$items->id}}"><button type="button">詳しく見る</button></a>
           </div>
-          <div>
+          <div>@auth
             <span>
               <img src="">
               <?php
               $favoriteFlag = false;
               foreach ($favorites as $favorite) {
                 if ($items->id === $favorite->shop_id) {
-                    $favoriteFlag = true;
-                    break;
+                  $favoriteFlag = true;
+                  break;
                 }
               }
               ?>
@@ -65,6 +65,7 @@
               </a>
               @endif
             </span>
+            @endauth
           </div>
         </div>
       </div>

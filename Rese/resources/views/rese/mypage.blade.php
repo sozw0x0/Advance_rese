@@ -42,16 +42,59 @@
             <th>Number</th>
             <td>{{$item->reserve_num}}</td>
           </tr>
-          @endforeach
         </table>
         <div>
           予約変更
+          <form action="/reserve/edit/{{$item->id}}" method="post">
+            @csrf
+            <input type="submit" value="予約変更">
         </div>
+        @endforeach
       </div>
       <div>
         お気に入り
+        @foreach ($favoriteLists as $items)
+        <div class="card_item">
+          <p>
+            <img src="storage/images/shop_{{$items->shop->id}}.jpg" class=" card_img">
+          </p>
+          <div class="card_content">
+            <h2 class="card-ttl">店の名前{{$items->shop->shop_name}}</h2>
+            <div>
+              <p><span>タグ{{$items->shop->shop_area}}</span><span>タグ{{$items->shop->shop_genre}}</span></p>
+            </div>
+            <div>
+              <a href="/detail/{{$items->shop->id}}"><button type="button">詳しく見る</button></a>
+            </div>
+            <div>
+              <span>
+                <img src="">
+                <?php
+                $favoriteFlag = false;
+                foreach ($favorites as $favorite) {
+                  if ($items->shop->id === $favorite->shop_id) {
+                    $favoriteFlag = true;
+                    break;
+                  }
+                }
+                ?>
+                @if($favoriteFlag)
+                <a href="/notfavorite/{{$items->shop->id}}" class="">
+                  いいね取り消し
+                </a>
+                @else
+                <a href="/favorite/{{$items->shop->id}}" class="">
+                  いいね
+                </a>
+                @endif
+              </span>
+            </div>
+          </div>
+        </div>
+        @endforeach
       </div>
     </div>
   </div>
+</div>
 </div>
 @endsection

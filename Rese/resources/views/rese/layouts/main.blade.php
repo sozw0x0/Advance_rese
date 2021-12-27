@@ -16,7 +16,7 @@
 
 <body class="full_page">
   <header class="wrap header_wrap">
-    <h1><a href="/" class="logo">Rese</a></h1>
+    <h1><a href="/" class="logo"><img src="storage/icon/logo.svg" class="site_logo" alt=""> Rese</a></h1>
     <nav class="nav">
       <ul class="nav_wrap">
         <li class="nav_item">

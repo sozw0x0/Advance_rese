@@ -78,6 +78,7 @@ Route::get('/mypage', [MypageController::class, 'show'])->middleware('auth')->na
 
 Route::group(['prefix' => '/reserve', 'middleware' => 'auth'],function () {
   Route::post('/create', [Reservecontroller::class, 'create']);
+  Route::post('/edit/{id?}', [Reservecontroller::class, 'edit']);
   Route::post('/update/{id?}', [Reservecontroller::class, 'update']);
   Route::post('/delete/{id?}', [Reservecontroller::class, 'delete']);
 });

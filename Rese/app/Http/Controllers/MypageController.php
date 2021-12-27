@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Favorite;
 use App\Models\Reserve;
 use App\Models\Shop;
 use App\Models\User;
@@ -18,6 +19,16 @@ class MypageController extends Controller
     {
         $id = Auth::id();
         $items =Reserve::where('user_id', $id)->get();
-        return view('rese.mypage', ['items' => $items]);
+        $favoriteLists = Favorite::where('user_id', $id)->get();
+        $shops = shop::all();
+
+        $shopIds = array();
+        foreach ($shops as $shop) {
+            array_push($shopIds, $shop->id);
+        }
+
+        $favorites = Favorite::whereIn('shop_id', $shopIds)->where('user_id', Auth::id())->get();
+        
+        return view('rese.mypage', compact( 'items', 'favoriteLists', 'favorites'));
     }
 }
