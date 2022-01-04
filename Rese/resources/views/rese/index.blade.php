@@ -4,16 +4,19 @@
 @section('main')
 
 <div>
-  <div>
-    <form action="/" method="get">
-      <p>
-        <select name="shop_area" size="1">
-          <option value="">All area</option>
-          <option value="東京都">東京都</option>
-          <option value="大阪府">大阪府</option>
-          <option value="福岡県">福岡県</option>
-        </select>
-      </p>
+  <div class="flex2">
+    <div>
+      <form action="/" method="get">
+        <p>
+          <select name="shop_area" size="1">
+            <option value="">All area</option>
+            <option value="東京都">東京都</option>
+            <option value="大阪府">大阪府</option>
+            <option value="福岡県">福岡県</option>
+          </select>
+        </p>
+    </div>
+    <div>
       <p>
         <select name="shop_genre" size="1">
           <option value="">All area</option>
@@ -24,8 +27,15 @@
           <option value="ラーメン">ラーメン</option>
         </select>
       </p>
+    </div>
+    <div>
       <input type="text" name="shop_name" id="" placeholder="Search...">
-      <input type="submit" value="">
+    </div>
+    <div>
+      <button type="submit">
+        <img src="storage/icon/seach.svg" class="icon" alt="">
+      </button>
+    </div>
     </form>
   </div>
   <div>店舗ページ

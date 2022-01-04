@@ -1,5 +1,6 @@
 .full_page {
   background: linear-gradient(90deg, #FACEFF, #BBBBE9);
+  font-family: 'Yusei Magic', sans-serif;
 }
 
 header {
@@ -15,13 +16,34 @@ header {
 .logo {
   font-weight: bold;
   line-height:48px;
-  font-size: 48px;
+  font-size: 42px;
   color: #5454f7;
-  text-decoration: none;
+}
+
+.ttl {
+  padding-left: 5px;
 }
 
 .site_logo {
   width: 48px;
+}
+
+.navIcon {
+  text-align: center;
+}
+
+.none {
+  text-decoration: none;
+}
+
+.icon {
+  width: 32px;
+  color: #5454f7;
+}
+
+.navText {
+  font-size: 12px;
+  text-align: center;
 }
 
 .header_wrap {
@@ -38,7 +60,7 @@ header {
 }
 
 .nav_item {
-  margin: 0 0 0 15px;
+  padding: 0 20px;
   font-size: 14px;
 }
 
@@ -73,9 +95,15 @@ header {
   background-color:#FDFDFD ;
 }
 
-.flex{
+.flex {
   display: flex;
   align-content: space-between;
+}
+
+.flex2 {
+  padding: 48px;
+  display: flex;
+  justify-content: center;
 }
 
 .detail {

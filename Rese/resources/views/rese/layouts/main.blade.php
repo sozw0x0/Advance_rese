@@ -10,32 +10,69 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zen+Kaku+Gothic+New:wght@500&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
   <title>@yield('title')</title>
 </head>
 
 <body class="full_page">
   <header class="wrap header_wrap">
-    <h1><a href="/" class="logo"><img src="storage/icon/logo.svg" class="site_logo" alt=""> Rese</a></h1>
+    <a href="/" class="logo none">
+      <div class="flex">
+        <img src="storage/icon/logo.svg" class="site_logo" alt="">
+        <div class="ttl"> Rese</div>
+      </div>
+    </a>
     <nav class="nav">
       <ul class="nav_wrap">
         <li class="nav_item">
-          <a href="{{ url('/') }}">TOP</a>
+          <a href="{{ url('/') }}" class="none">
+            <div class="navIcon">
+              <img src="storage/icon/home.svg" class="icon" alt="">
+              <div class="navText">TOP</div>
+            </div>
+          </a>
         </li>
-        <li class="nav_item">@auth
-          <a href="{{ url('/mypage') }}">mypage</a>
+        @auth
+        <li class="nav_item">
+          <a href="{{ url('/mypage') }}" class="none">
+            <div class="navIcon">
+              <img src="storage/icon/mypage.svg" class="icon" alt="">
+              <div class="navText">マイページ</div>
+            </div>
+          </a>
         </li>
-        <li>
-          <form action="{{ route('logout') }}" method="POST">
+        <li class="nav_item">
+          <form action="{{ route('logout') }}" method="POST" class="none">
             @csrf
             <a href="route('logout')" onclick="event.preventDefault();
-            this.closest('form').submit();">Log out</a>
+            this.closest('form').submit();" class="none">
+              <div class="navIcon">
+                <img src="storage/icon/logout.svg" class="icon" alt="">
+                <div class="navText">ログアウト</div>
+              </div>
+            </a>
           </form>
         </li>
         @endauth
-        <li class="nav_item">@guest
-          <a href="{{ route('register') }}">Register</a>
-          <a href="{{ route('login') }}">Log in</a>
+        @guest
+        <li class="nav_item">
+          <a href="{{ route('register') }}" class="none">
+            <div class="navIcon">
+              <img src="storage/icon/mypage.svg" class="icon" alt="">
+              <div class="navText">新規登録</div>
+            </div>
+          </a>
+        </li>
+        <li class="nav_item">
+          <a href="{{ route('login') }}" class="none">
+            <div class="navIcon">
+              <img src="storage/icon/login.svg" class="icon" alt="">
+              <div class="navText">ログイン</div>
+            </div>
+          </a>
         </li>
         @endguest
       </ul>
