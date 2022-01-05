@@ -64,35 +64,50 @@ header {
   font-size: 14px;
 }
 
-.content_card {
-  background-color: #fff;
-  width: 50vw;
-  padding: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-}
+
 
 .card_img {
   width: 100%;
+  border-radius: 15px 15px 0 0;
 }
 
 .card_group {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   align-content: space-between;
   flex-wrap: wrap;
 }
 
 .card_item {
-  margin: 35px;
-  width: 20%;
-  border-radius: 30px;
+  margin: 20px;
+  width: calc(23% - 20px);
+}
+
+.card_ttl,h2{
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.tag {
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+.btn_d {
+  background-color: #5454f7;
+  border-radius: 5px;
+  border-style: none;
+  padding: 8px 20px;
+  color: #FDFDFD;
+  margin: 20px 20px;
 }
 
 .card_content {
   background-color:#FDFDFD ;
+   border-radius: 0 0 15px 15px;
 }
 
 .flex {
@@ -115,3 +130,57 @@ header {
   width: 40%;
   background-color: #A394EE;
 }
+
+.seachIcon {
+  height: 28px;
+  margin: 3.5px;
+  border:none;
+  border-radius:0 25px 25px 0;
+}
+
+.btn_s {
+  border: solid 2px;
+  border-radius:0 25px 25px 0;
+  background-color: #A1FBEE;
+}
+
+.height {
+  border: solid 2px;
+  height: 42px;
+  border-right: transparent;
+}
+
+.content_card {
+  width: 30%;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.card_head {
+  font-size: 28px;
+  color: #FDFDFD;
+  width: 80%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background-color: #5454f7;
+  margin: 0 auto;
+  border-radius: 15px 15px 0 0;
+}
+
+.content_item {
+  background-color: #FDFDFD;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 0 0 15px 15px;
+}
+
+.content_f {
+  margin: 10px auto;
+}
+

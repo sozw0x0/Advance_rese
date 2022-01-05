@@ -8,7 +8,7 @@
     <div>
       <form action="/" method="get">
         <p>
-          <select name="shop_area" size="1">
+          <select name="shop_area" size="1" class="height border-radius">
             <option value="">All area</option>
             <option value="東京都">東京都</option>
             <option value="大阪府">大阪府</option>
@@ -18,7 +18,7 @@
     </div>
     <div>
       <p>
-        <select name="shop_genre" size="1">
+        <select name="shop_genre" size="1" class="height">
           <option value="">All area</option>
           <option value="寿司">寿司</option>
           <option value="焼肉">焼肉</option>
@@ -29,16 +29,16 @@
       </p>
     </div>
     <div>
-      <input type="text" name="shop_name" id="" placeholder="Search...">
+      <input type="text" name="shop_name" id="" placeholder="Search..." class="height">
     </div>
     <div>
-      <button type="submit">
-        <img src="storage/icon/seach.svg" class="icon" alt="">
+      <button type="submit" class="btn_s">
+        <img src="storage/icon/seach.svg" class="seachIcon" alt="">
       </button>
     </div>
     </form>
   </div>
-  <div>店舗ページ
+  <div>
     <div class="card_group">
       @foreach ($shops as $items)
       <div class="card_item">
@@ -46,12 +46,12 @@
           <img src="storage/images/shop_{{$items->id}}.jpg" class=" card_img">
         </p>
         <div class="card_content">
-          <h2 class="card-ttl">店の名前{{$items->shop_name}}</h2>
+          <h2 class="card-ttl">{{$items->shop_name}}</h2>
           <div>
-            <p><span>タグ{{$items->shop_area}}</span><span>タグ{{$items->shop_genre}}</span></p>
+            <p class="tag">＃{{$items->shop_area}}＃{{$items->shop_genre}}</p>
           </div>
           <div>
-            <a href="/detail/{{$items->id}}"><button type="button">詳しく見る</button></a>
+            <a href="/detail/{{$items->id}}"><button type="button" class="btn_d">詳しく見る</button></a>
           </div>
           <div>@auth
             <span>
