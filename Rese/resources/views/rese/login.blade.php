@@ -12,21 +12,25 @@
       <form action=" {{ route('login') }}" method="POST">
         @csrf
         <div class="content_f">
-          <label for="email"><span></span></label>
-          <input type="email" name="email" value="{{ old('email') }}">
+          <span>
+            <img src="storage/icon/mail.svg" alt="" class="icons">
+          </span>
+          <input type="email" name="email" value="{{ old('email') }}" placeholder="email" class="btm">
           @if ($errors->has('email'))
           <p class="error-message">{{ $errors->first('email') }}</p>
           @endif
         </div>
         <div class="content_f">
-          <label for="password"><span></span></label>
-          <input type="password" name="password" value="{{ old('password') }}">
+          <span>
+            <img src="storage/icon/pass.svg" alt="" class="icons">
+          </span>
+          <input type="password" name="password" placeholder="password" class="btm">
           @if ($errors->has('pass'))
           <p class="error-message">{{ $errors->first('pass') }}</p>
           @endif
         </div>
-        <div>
-          <input type="submit" value="ログイン" class="button">
+        <div class="btn_r">
+          <input type="submit" value="ログイン" class="btn_d">
         </div>
       </form>
     </div>

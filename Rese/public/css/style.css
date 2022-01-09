@@ -69,6 +69,38 @@ header {
   border-radius: 15px 15px 0 0;
 }
 
+
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex2 {
+  padding: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.l_box {
+  width: 40%;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+.r_box {
+  width: 40%;
+  margin-right: 100px;
+  margin-top: 100px;
+  background-color: #A394EE;
+}
+
 .card_group {
   width: 90%;
   margin-right: auto;
@@ -78,9 +110,20 @@ header {
   flex-wrap: wrap;
 }
 
+.card_group_mp {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .card_item {
   margin: 20px;
   width: calc(23% - 20px);
+}
+
+.card_item2 {
+  margin: 20px;
+  width: calc(45% - 20px);
 }
 
 .card_ttl,h2{
@@ -108,36 +151,6 @@ header {
   border-radius: 0 0 15px 15px;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-.flex2 {
-  padding: 48px;
-  display: flex;
-  justify-content: center;
-}
-
-.wrap {
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.detail {
-  width: 40%;
-  margin-left: 100px;
-  margin-top: 100px;
-}
-
-.reserve_table {
-  width: 40%;
-  margin-right: 100px;
-  margin-top: 100px;
-  background-color: #A394EE;
-}
-
 .seachIcon {
   height: 28px;
   margin: 3.5px;
@@ -158,8 +171,7 @@ header {
 }
 
 .content_card {
-  width: 30%;
-  padding: 30px;
+  width: 35%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -171,7 +183,7 @@ header {
   font-size: 28px;
   color: #FDFDFD;
   width: 80%;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 10px;
   padding-left: 20px;
   background-color: #5454f7;
@@ -188,7 +200,7 @@ header {
 }
 
 .content_f {
-  margin: 10px auto;
+  margin: 25px auto;
 }
 
 .favo {
@@ -196,3 +208,23 @@ header {
   margin: 10px 0px;
 }
 
+.icons {
+  width: 32px;
+  vertical-align: bottom;
+}
+
+.btm {
+  width: 85%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.btn_r {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.yoyaku {
+  background-color: #A1FBEE;
+}

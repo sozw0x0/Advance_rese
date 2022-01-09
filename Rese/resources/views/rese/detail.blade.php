@@ -1,23 +1,24 @@
 @extends('/rese/layouts/main')
 
-@section('title', '店舗ページ')
+@section('title', '店舗詳細')
 @section('main')
+
 <div class="flex wrap">
-  <div class="detail">
-    <h2 class="">店の名前{{$shop_detail->shop_name}}</h2>
+  <div class="l_box">
+    <h2 class="">{{$shop_detail->shop_name}}</h2>
     <p>
-      <img src="/storage/images/shop_{{$shop_detail->id}}.jpg" class=" card_img">
+      <img src="/storage/images/shop_{{$shop_detail->id}}.jpg" class="card_img">
     </p>
-    <div class="">
+    <div>
       <div>
-        <p><span>タグ{{$shop_detail->shop_area}}</span><span>タグ{{$shop_detail->shop_genre}}</span></p>
+        <p>#{{$shop_detail->shop_area}} #{{$shop_detail->shop_genre}}</span></p>
         <div>
           <p>{{$shop_detail->shop_summary}}</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="reserve_table">予約
+  <div class="r_box">予約
     <div>
       <div class="reserve_form">
         <form action="/reserve/create" method="POST">

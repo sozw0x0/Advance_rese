@@ -11,28 +11,34 @@
     <form action=" {{ route('register') }}" method="POST">
       @csrf
       <div class="content_f">
-        <label for="name"><span></span></label>
-        <input type="text" name="name" value="{{ old('name') }}">
+        <span>
+          <img src="storage/icon/name.svg" alt="" class="icons">
+        </span>
+        <input type="text" name="name" value="{{ old('name') }}" placeholder="username" class="btm">
         @if ($errors->has('name'))
         <p class="error-message">{{ $errors->first('name') }}</p>
         @endif
       </div>
       <div class="content_f">
-        <label for="email"><span></span></label>
-        <input type="email" name="email" value="{{ old('email') }}">
+        <span>
+          <img src="storage/icon/mail.svg" alt="" class="icons">
+        </span>
+        <input type="email" name="email" value="{{ old('email') }}" placeholder="email" class="btm">
         @if ($errors->has('email'))
         <p class="error-message">{{ $errors->first('email') }}</p>
         @endif
       </div>
       <div class="content_f">
-        <label for="password"><span></span></label>
-        <input type="password" name="password">
+        <span>
+          <img src="storage/icon/pass.svg" alt="" class="icons">
+        </span>
+        <input type="password" name="password" placeholder="password" class="btm">
         @if ($errors->has('password'))
         <p class="error-message">{{ $errors->first('password') }}</p>
         @endif
       </div>
-      <div>
-        <input type="submit" value="登録" class="button">
+      <div class="btn_r">
+        <input type="submit" value="登録" class="btn_d">
       </div>
     </form>
   </div>

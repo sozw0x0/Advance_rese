@@ -2,73 +2,70 @@
 
 @section('title', 'マイページ')
 @section('main')
-<div>マイページ
-  <div>
-    予約状況
-  </div>
+
+<div>
   <div>
     {{ Auth::user()->name }}
   </div>
-  <div>
-    <div>
+  <div div class="flex wrap">
+    <div class="l_box">
+      予約
       <div>
-        <p>予約状況</p>
-        <div>
-          <span></span>予約
-        </div>
-        @foreach ($items as $item)
-        <div>
-          <form action="/reserve/delete/{{$item->id}}" method="post">
-            @csrf
-            <input type="submit" value="×">
-          </form>
-        </div>
-      </div>
-      <div>
-        <table>
-          <tr>
-            <th>shop</th>
-            <td>{{$item->shop->shop_name}}</td>
-          </tr>
-          <tr>
-            <th>Date</th>
-            <td>{{$item->reserve_date}}</td>
-          </tr>
-          <tr>
-            <th>Time</th>
-            <td>{{$item->reserve_time}}</td>
-          </tr>
-          <tr>
-            <th>Number</th>
-            <td>{{$item->reserve_num}}</td>
-          </tr>
-        </table>
-        <div>
-          予約変更
-          <form action="/reserve/edit/{{$item->id}}" method="post">
-            @csrf
-            <input type="submit" value="予約変更">
+        @foreach ($items as $item)内容
+        <div class="yoyaku">
+          <div>予約取り消し
+            <form action="/reserve/delete/{{$item->id}}" method="post">
+              @csrf
+              <input type="submit" value="×">
+            </form>
+          </div>
+          <div>
+            <table>
+              <tr>
+                <th>shop</th>
+                <td>{{$item->shop->shop_name}}</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>{{$item->reserve_date}}</td>
+              </tr>
+              <tr>
+                <th>Time</th>
+                <td>{{$item->reserve_time}}</td>
+              </tr>
+              <tr>
+                <th>Number</th>
+                <td>{{$item->reserve_num}}</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            予約変更
+            <form action="/reserve/edit/{{$item->id}}" method="post">
+              @csrf
+              <input type="submit" value="予約変更">
+          </div>
         </div>
         @endforeach
       </div>
-      <div>
-        お気に入り
-        @foreach ($favoriteLists as $items)
-        <div class="card_item">
-          <p>
-            <img src="storage/images/shop_{{$items->shop->id}}.jpg" class=" card_img">
-          </p>
-          <div class="card_content">
-            <h2 class="card-ttl">店の名前{{$items->shop->shop_name}}</h2>
+    </div>
+    <div class="r_box card_group_mp">
+      @foreach ($favoriteLists as $items)
+      <div class="card_item2">
+        <p>
+          <img src="storage/images/shop_{{$items->shop->id}}.jpg" class=" card_img">
+        </p>
+        <div class="card_content">
+          <h2 class="card-ttl">{{$items->shop->shop_name}}</h2>
+          <div>
+            <p class="tag">#{{$items->shop->shop_area}} #{{$items->shop->shop_genre}}</p>
+          </div>
+          <div class="flex wrap">
             <div>
-              <p><span>タグ{{$items->shop->shop_area}}</span><span>タグ{{$items->shop->shop_genre}}</span></p>
-            </div>
-            <div>
-              <a href="/detail/{{$items->shop->id}}"><button type="button">詳しく見る</button></a>
+              <a href="/detail/{{$items->shop->id}}"><button type="button" class="btn_d">詳しく見る</button></a>
             </div>
             <div>
               <span>
-                <img src="">
                 <?php
                 $favoriteFlag = false;
                 foreach ($favorites as $favorite) {
@@ -79,22 +76,25 @@
                 }
                 ?>
                 @if($favoriteFlag)
-                <a href="/notfavorite/{{$items->shop->id}}" class="">
-                  いいね取り消し
-                </a>
+                <div>
+                  <a href="/notfavorite/{{$items->shop->id}}" class="">
+                    <img src="storage/icon/favo2.svg" class="favo" alt="">
+                  </a>
+                </div>
                 @else
-                <a href="/favorite/{{$items->shop->id}}" class="">
-                  いいね
-                </a>
+                <div>
+                  <a href="/favorite/{{$items->shop->id}}" class="">
+                    <img src="storage/icon/favo.svg" class="favo" alt="">
+                  </a>
+                </div>
                 @endif
               </span>
             </div>
           </div>
         </div>
-        @endforeach
       </div>
+      @endforeach
     </div>
   </div>
-</div>
 </div>
 @endsection
