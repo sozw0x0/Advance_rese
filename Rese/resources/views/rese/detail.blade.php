@@ -2,9 +2,7 @@
 
 @section('title', '店舗ページ')
 @section('main')
-<p>店舗詳細</p>
-
-<div class="flex">
+<div class="flex wrap">
   <div class="detail">
     <h2 class="">店の名前{{$shop_detail->shop_name}}</h2>
     <p>

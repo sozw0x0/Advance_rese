@@ -19,7 +19,7 @@
     <div>
       <p>
         <select name="shop_genre" size="1" class="height">
-          <option value="">All area</option>
+          <option value="">All genre</option>
           <option value="寿司">寿司</option>
           <option value="焼肉">焼肉</option>
           <option value="居酒屋">居酒屋</option>
@@ -48,34 +48,39 @@
         <div class="card_content">
           <h2 class="card-ttl">{{$items->shop_name}}</h2>
           <div>
-            <p class="tag">＃{{$items->shop_area}}＃{{$items->shop_genre}}</p>
+            <p class="tag">#{{$items->shop_area}} #{{$items->shop_genre}}</p>
           </div>
-          <div>
-            <a href="/detail/{{$items->id}}"><button type="button" class="btn_d">詳しく見る</button></a>
-          </div>
-          <div>@auth
-            <span>
-              <img src="">
-              <?php
-              $favoriteFlag = false;
-              foreach ($favorites as $favorite) {
-                if ($items->id === $favorite->shop_id) {
-                  $favoriteFlag = true;
-                  break;
+          <div class="flex wrap">
+            <div>
+              <a href="/detail/{{$items->id}}"><button type="button" class="btn_d">詳しく見る</button></a>
+            </div>
+            <div>@auth
+              <span>
+                <?php
+                $favoriteFlag = false;
+                foreach ($favorites as $favorite) {
+                  if ($items->id === $favorite->shop_id) {
+                    $favoriteFlag = true;
+                    break;
+                  }
                 }
-              }
-              ?>
-              @if($favoriteFlag)
-              <a href="/notfavorite/{{$items->id}}" class="">
-                いいね取り消し
-              </a>
-              @else
-              <a href="/favorite/{{$items->id}}" class="">
-                いいね
-              </a>
-              @endif
-            </span>
-            @endauth
+                ?>
+                @if($favoriteFlag)
+                <div>
+                  <a href="/notfavorite/{{$items->id}}" class="">
+                    <img src="storage/icon/favo2.svg" class="favo" alt="">
+                  </a>
+                </div>
+                @else
+                <div>
+                  <a href="/favorite/{{$items->id}}" class="">
+                    <img src="storage/icon/favo.svg" class="favo" alt="">
+                  </a>
+                </div>
+                @endif
+              </span>
+              @endauth
+            </div>
           </div>
         </div>
       </div>

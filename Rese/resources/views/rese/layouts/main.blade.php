@@ -18,7 +18,7 @@
 </head>
 
 <body class="full_page">
-  <header class="wrap header_wrap">
+  <header class="header_wrap">
     <a href="/" class="logo none">
       <div class="flex">
         <img src="storage/icon/logo.svg" class="site_logo" alt="">
