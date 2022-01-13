@@ -15,6 +15,7 @@ class shopsTableSeeder extends Seeder
     public function run()
     {
         $param = [
+            'id' => '1',
             'shop_name' => '仙人',
             'shop_area' => '東京都',
             'shop_genre' => '寿司',
@@ -22,6 +23,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '2',
             'shop_name' => '牛助',
             'shop_area' => '大阪府',
             'shop_genre' => '焼肉',
@@ -29,6 +31,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '3',
             'shop_name' => '戦慄',
             'shop_area' => '福岡県',
             'shop_genre' => '居酒屋',
@@ -36,6 +39,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '4',
             'shop_name' => 'ルーク',
             'shop_area' => '東京都',
             'shop_genre' => 'イタリアン',
@@ -43,6 +47,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '5',
             'shop_name' => '志摩屋',
             'shop_area' => '福岡県',
             'shop_genre' => 'ラーメン',
@@ -50,6 +55,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '6',
             'shop_name' => '香',
             'shop_area' => '東京都',
             'shop_genre' => '焼肉',
@@ -57,6 +63,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '7',
             'shop_name' => 'JJ',
             'shop_area' => '大阪府',
             'shop_genre' => 'イタリアン',
@@ -64,6 +71,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '8',
             'shop_name' => 'らーめん極み',
             'shop_area' => '東京都',
             'shop_genre' => 'ラーメン',
@@ -71,6 +79,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '9',
             'shop_name' => '鳥雨',
             'shop_area' => '大阪府',
             'shop_genre' => '居酒屋',
@@ -79,6 +88,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '10',
             'shop_name' => '築地色合',
             'shop_area' => '東京都',
             'shop_genre' => '寿司',
@@ -86,6 +96,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '11',
             'shop_name' => '晴海',
             'shop_area' => '大阪府',
             'shop_genre' => '焼肉',
@@ -93,6 +104,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '12',
             'shop_name' => '三子',
             'shop_area' => '福岡県',
             'shop_genre' => '焼肉',
@@ -100,6 +112,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '13',
             'shop_name' => '八戒',
             'shop_area' => '東京都',
             'shop_genre' => '居酒屋',
@@ -107,6 +120,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '14',
             'shop_name' => '福助',
             'shop_area' => '大阪府',
             'shop_genre' => '寿司',
@@ -114,6 +128,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '15',
             'shop_name' => 'ラー北',
             'shop_area' => '東京都',
             'shop_genre' => 'ラーメン',
@@ -121,6 +136,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '16',
             'shop_name' => '翔',
             'shop_area' => '大阪府',
             'shop_genre' => '居酒屋',
@@ -128,6 +144,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '17',
             'shop_name' => '経緯',
             'shop_area' => '東京都',
             'shop_genre' => '寿司',
@@ -135,6 +152,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '18',
             'shop_name' => '漆',
             'shop_area' => '東京都',
             'shop_genre' => '焼肉',
@@ -142,6 +160,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '19',
             'shop_name' => 'THE TOOL',
             'shop_area' => '福岡県',
             'shop_genre' => 'イタリアン',
@@ -149,6 +168,7 @@ class shopsTableSeeder extends Seeder
         ];
         DB::table('shops')->insert($param);
         $param = [
+            'id' => '20',
             'shop_name' => '木船',
             'shop_area' => '大阪府',
             'shop_genre' => '寿司',
