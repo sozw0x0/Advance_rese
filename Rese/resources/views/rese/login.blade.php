@@ -13,7 +13,7 @@
         @csrf
         <div class="content_f">
           <span>
-            <img src="storage/icon/mail.svg" alt="" class="icons">
+            <img src="{{ asset('/storage/icon/mail.svg') }}" alt="" class=" icons">
           </span>
           <input type="email" name="email" value="{{ old('email') }}" placeholder="email" class="btm">
           @if ($errors->has('email'))
@@ -22,7 +22,7 @@
         </div>
         <div class="content_f">
           <span>
-            <img src="storage/icon/pass.svg" alt="" class="icons">
+            <img src="{{ asset('/storage/icon/pass.svg') }}" alt="" class="icons">
           </span>
           <input type="password" name="password" placeholder="password" class="btm">
           @if ($errors->has('pass'))

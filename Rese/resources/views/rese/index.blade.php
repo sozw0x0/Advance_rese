@@ -33,7 +33,7 @@
     </div>
     <div>
       <button type="submit" class="btn_s">
-        <img src="storage/icon/seach.svg" class="seachIcon" alt="">
+        <img src="{{ asset('/storage/icon/seach.svg') }}" class="seachIcon" alt="">
       </button>
     </div>
     </form>
@@ -43,7 +43,7 @@
       @foreach ($shops as $items)
       <div class="card_item">
         <p>
-          <img src="storage/images/shop_{{$items->id}}.jpg" class=" card_img">
+          <img src="storage/images/shop_{{$items->id}}.jpg" class="card_img">
         </p>
         <div class="card_content">
           <h2 class="card-ttl">{{$items->shop_name}}</h2>
@@ -68,13 +68,13 @@
                 @if($favoriteFlag)
                 <div>
                   <a href="/notfavorite/{{$items->id}}" class="">
-                    <img src="storage/icon/favo2.svg" class="favo" alt="">
+                    <img src="{{ asset('/storage/icon/favo2.svg') }}" class="favo" alt="">
                   </a>
                 </div>
                 @else
                 <div>
                   <a href="/favorite/{{$items->id}}" class="">
-                    <img src="storage/icon/favo.svg" class="favo" alt="">
+                    <img src="{{ asset('/storage/icon/favo.svg') }}" class="favo" alt="">
                   </a>
                 </div>
                 @endif

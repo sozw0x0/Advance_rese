@@ -21,16 +21,16 @@
   <header class="header_wrap">
     <a href="/" class="logo none">
       <div class="flex">
-        <img src="storage/icon/logo.svg" class="site_logo" alt="">
+        <img src="{{ asset('/storage/icon/logo.svg') }}" class="site_logo" alt="">
         <div class="ttl"> Rese</div>
       </div>
     </a>
-    <nav class="nav">
+    <nav class="header_nav">
       <ul class="nav_wrap">
         <li class="nav_item">
           <a href="{{ url('/') }}" class="none">
             <div class="navIcon">
-              <img src="storage/icon/home.svg" class="icon" alt="">
+              <img src="{{ asset('/storage/icon/home.svg') }}" class="icon" alt="">
               <div class="navText">TOP</div>
             </div>
           </a>
@@ -39,7 +39,7 @@
         <li class="nav_item">
           <a href="{{ url('/mypage') }}" class="none">
             <div class="navIcon">
-              <img src="storage/icon/mypage.svg" class="icon" alt="">
+              <img src="{{ asset('/storage/icon/mypage.svg') }}" class="icon" alt="">
               <div class="navText">マイページ</div>
             </div>
           </a>
@@ -50,7 +50,7 @@
             <a href="route('logout')" onclick="event.preventDefault();
             this.closest('form').submit();" class="none">
               <div class="navIcon">
-                <img src="storage/icon/logout.svg" class="icon" alt="">
+                <img src="{{ asset('/storage/icon/logout.svg') }}" class="icon" alt="">
                 <div class="navText">ログアウト</div>
               </div>
             </a>
@@ -61,7 +61,7 @@
         <li class="nav_item">
           <a href="{{ route('register') }}" class="none">
             <div class="navIcon">
-              <img src="storage/icon/mypage.svg" class="icon" alt="">
+              <img src="{{ asset('/storage/icon/mypage.svg') }}" class="icon" alt="">
               <div class="navText">新規登録</div>
             </div>
           </a>
@@ -69,7 +69,7 @@
         <li class="nav_item">
           <a href="{{ route('login') }}" class="none">
             <div class="navIcon">
-              <img src="storage/icon/login.svg" class="icon" alt="">
+              <img src="{{ asset('/storage/icon/login.svg') }}" class="icon" alt="">
               <div class="navText">ログイン</div>
             </div>
           </a>
@@ -77,6 +77,68 @@
         @endguest
       </ul>
     </nav>
+
+    <div id="nav-wrapper" class="nav-wrapper">
+      <div class="hamburger" id="js-hamburger">
+        <span class="hamburger__line hamburger__line--1"></span>
+        <span class="hamburger__line hamburger__line--2"></span>
+        <span class="hamburger__line hamburger__line--3"></span>
+      </div>
+
+      <nav class="sp-nav">
+        <ul>
+          <li class="nav_item">
+            <a href="{{ url('/') }}" class="none">
+              <div class="navIcon">
+                <img src="{{ asset('/storage/icon/home.svg') }}" class="icon" alt="">
+                <div class="navText">TOP</div>
+              </div>
+            </a>
+          </li>
+          @auth
+          <li class="nav_item">
+            <a href="{{ url('/mypage') }}" class="none">
+              <div class="navIcon">
+                <img src="{{ asset('/storage/icon/mypage.svg') }}" class="icon" alt="">
+                <div class="navText">マイページ</div>
+              </div>
+            </a>
+          </li>
+          <li class="nav_item">
+            <form action="{{ route('logout') }}" method="POST" class="none">
+              @csrf
+              <a href="route('logout')" onclick="event.preventDefault();
+            this.closest('form').submit();" class="none">
+                <div class="navIcon">
+                  <img src="{{ asset('/storage/icon/logout.svg') }}" class="icon" alt="">
+                  <div class="navText">ログアウト</div>
+                </div>
+              </a>
+            </form>
+          </li>
+          @endauth
+          @guest
+          <li class="nav_item">
+            <a href="{{ route('register') }}" class="none">
+              <div class="navIcon">
+                <img src="{{ asset('/storage/icon/mypage.svg') }}" class="icon" alt="">
+                <div class="navText">新規登録</div>
+              </div>
+            </a>
+          </li>
+          <li class="nav_item">
+            <a href="{{ route('login') }}" class="none">
+              <div class="navIcon">
+                <img src="{{ asset('/storage/icon/login.svg') }}" class="icon" alt="">
+                <div class="navText">ログイン</div>
+              </div>
+            </a>
+          </li>
+          @endguest
+        </ul>
+      </nav>
+      <div class="black-bg" id="js-black-bg"></div>
+    </div>
   </header>
 
   <div class="main_content">
@@ -86,6 +148,7 @@
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--

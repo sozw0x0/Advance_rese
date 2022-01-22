@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Reserve;
 use Illuminate\Http\Request;
-use App\Models\Shop;
 use Illuminate\Support\Facades\DB;
 
 class ReserveController extends Controller

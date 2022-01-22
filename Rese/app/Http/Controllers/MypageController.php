@@ -7,10 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Favorite;
 use App\Models\Reserve;
 use App\Models\Shop;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Auth;
 
 class MypageController extends Controller

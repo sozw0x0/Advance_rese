@@ -11,7 +11,7 @@
     <div class="l_box">
       予約
       <div>
-        @foreach ($items as $item)内容
+        @foreach ($items as $item)
         <div class="yoyaku">
           <div>予約取り消し
             <form action="/reserve/delete/{{$item->id}}" method="post">
@@ -39,11 +39,10 @@
               </tr>
             </table>
           </div>
-          <div>
-            予約変更
+          <div class="btn_r">
             <form action="/reserve/edit/{{$item->id}}" method="post">
               @csrf
-              <input type="submit" value="予約変更">
+              <input type="submit" value="予約変更" class="btn_d">
           </div>
         </div>
         @endforeach
@@ -78,13 +77,13 @@
                 @if($favoriteFlag)
                 <div>
                   <a href="/notfavorite/{{$items->shop->id}}" class="">
-                    <img src="storage/icon/favo2.svg" class="favo" alt="">
+                    <img src="{{ asset('/storage/icon/favo2.svg') }}" class="favo" alt="">
                   </a>
                 </div>
                 @else
                 <div>
                   <a href="/favorite/{{$items->shop->id}}" class="">
-                    <img src="storage/icon/favo.svg" class="favo" alt="">
+                    <img src="{{ asset('/storage/icon/favo.svg') }}" class="favo" alt="">
                   </a>
                 </div>
                 @endif
