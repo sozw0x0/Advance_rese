@@ -11,7 +11,7 @@
     </p>
     <div>
       <div>
-        <p>#{{$shop_detail->shop_area}} #{{$shop_detail->shop_genre}}</span></p>
+        <p>#{{$shop_detail->shop_area}} #{{$shop_detail->shop_genre}}</p>
         <div>
           <p>{{$shop_detail->shop_summary}}</p>
         </div>

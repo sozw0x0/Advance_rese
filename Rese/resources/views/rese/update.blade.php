@@ -4,14 +4,14 @@
 @section('main')
 <p>予約変更</p>
 
-<div class="flex">
-  <div class="detail">
+<div class="flex wrap">
+  <div class="l_box">
     @foreach ($items as $item)
-    <h2 class="">店の名前{{$item->shop->shop_name}}</h2>
+    <h2 class="">{{$item->shop->shop_name}}</h2>
     <p>
-      <img src="/storage/images/shop_{{$item->shop->id}}.jpg" class=" card_img">
+      <img src="/storage/images/shop_{{$item->shop->id}}.jpg" class="card_img">
     </p>
-    <div class="">
+    <div>
       <div>
         <p><span>タグ{{$item->shop->shop_area}}</span><span>タグ{{$item->shop->shop_genre}}</span></p>
         <div>
@@ -20,12 +20,12 @@
       </div>
     </div>
   </div>
-  <div class="reserve_table">予約内容
+  <div class="r_box">予約内容
     <div>
       <div class="reserve_form">
         <table>
           <tr>
-            <th>shop</th>
+            <th>Shop</th>
             <td>{{$item->shop->shop_name}}</td>
           </tr>
           <tr>
