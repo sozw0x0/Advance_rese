@@ -48,7 +48,7 @@
       </div>
       <div>
         <div class="reserve_form">
-          <form action="/reserve/edit" method="POST">
+          <form action="/reserve/update/{{$item->id}}" method="POST">
             @csrf
             <input id="reserve_date" type="date" name="reserve_date" value="" onforminput="onforminput();">
             <input type="time" name="reserve_time" value="" step="900">

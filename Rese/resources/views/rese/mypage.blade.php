@@ -13,7 +13,8 @@
       <div>
         @foreach ($items as $item)
         <div class="yoyaku">
-          <div class="flex">予約取り消し
+          <div class="flex">
+            <p>予約内容</p>
             <form action="/reserve/delete/{{$item->id}}" method="post">
               @csrf
               <input type="submit" value="×" class="btn_m">
