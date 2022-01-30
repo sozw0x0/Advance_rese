@@ -44,6 +44,7 @@
             <form action="/reserve/edit/{{$item->id}}" method="post">
               @csrf
               <input type="submit" value="予約変更" class="btn_d">
+            </form>
           </div>
         </div>
         @endforeach

@@ -26,7 +26,6 @@ class ReserveController extends Controller
     {
         $items = Reserve::where('id', $request->id)->get();
         return view('rese.edit', compact('items'));
-
     }
 
     public function update(Request $request)

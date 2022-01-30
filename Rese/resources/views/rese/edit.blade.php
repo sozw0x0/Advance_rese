@@ -14,7 +14,7 @@
       </p>
       <div>
         <div>
-          <p>#{{$item->shop->shop_area}} #{{$item->shop->shop_genre}}</</p>
+          <p>#{{$item->shop->shop_area}} #{{$item->shop->shop_genre}}</< /p>
           <div>
             <p>{{$item->shop->shop_summary}}</p>
           </div>
@@ -50,12 +50,15 @@
         <div class="reserve_form">
           <form action="/reserve/update/{{$item->id}}" method="POST">
             @csrf
-            <input id="reserve_date" type="date" name="reserve_date" value="" onforminput="onforminput();">
-            <input type="time" name="reserve_time" value="" step="900">
-            <input type="number" name="reserve_num" value="" min="1">
+            <p>
+              <label for="reserve_date">予約日</label><input id="reserve_date" type="date" name="reserve_date" value="">
+            </p>
+            <p><label for="reserve_time">時間</label><input id="reserve_time" type="time" name="reserve_time" value="" step="900"></p>
+            <p><label for="reserve_num">人数</label><input id="reserve_num" type="number" name="reserve_num" value="" min="1" max="30">
+            </p>
             <input type="hidden" name="id" value="{{$item->id}}">
         </div>
-        <div><button type="submit">予約変更</button></div>
+        <div><button type="submit" class="btn_d">予約変更</button></div>
         </form>
         @endforeach
       </div>
