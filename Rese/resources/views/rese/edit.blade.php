@@ -27,21 +27,21 @@
       <div class="reserve_form">
         <table>
           <tr>
-            <th>Shop</th>
+            <th>店名</th>
             <td>{{$item->shop->shop_name}}</td>
           </tr>
           <tr>
-            <th>Date</th>
+            <th>予約日</th>
             <td>
               {{$item->reserve_date}}
             </td>
           </tr>
           <tr>
-            <th>Time</th>
+            <th>時間</th>
             <td>{{$item->reserve_time}}</td>
           </tr>
           <tr>
-            <th>Number</th>
+            <th>人数</th>
             <td>{{$item->reserve_num}}</span></td>
           </tr>
         </table>

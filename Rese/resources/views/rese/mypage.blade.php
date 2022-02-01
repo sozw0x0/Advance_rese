@@ -23,19 +23,19 @@
           <div>
             <table>
               <tr>
-                <th>shop</th>
+                <th>店名</th>
                 <td>{{$item->shop->shop_name}}</td>
               </tr>
               <tr>
-                <th>Date</th>
+                <th>予約日</th>
                 <td>{{$item->reserve_date}}</td>
               </tr>
               <tr>
-                <th>Time</th>
+                <th>時間</th>
                 <td>{{$item->reserve_time}}</td>
               </tr>
               <tr>
-                <th>Number</th>
+                <th>人数</th>
                 <td>{{$item->reserve_num}}</td>
               </tr>
             </table>
@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="r_box">
-      お気に入り
+      <p>お気に入り</p>
       <div class="card_group_mp">
         @foreach ($favoriteLists as $items)
         <div class="card_item2">
